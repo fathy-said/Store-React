@@ -1,14 +1,12 @@
 .swiper-slide {
   margin-top: 20px;
-  background-color: red;
+  background-color: var(--main-color-2);
 }
 
-.swiper-wrapper {}
 
-.swiper-wrapper {}
 
 .swiper-slide img {
-  height: 400px;
+  height: 350px;
   width: 100%;
   object-fit: cover;
 }
