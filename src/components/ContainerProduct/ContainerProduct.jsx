@@ -1,15 +1,10 @@
 import React from 'react';
 import "./ContainerProduct.css"
 import { ProductBox } from "../index.js"
-const ContainerProduct = () => {
+const ContainerProduct = ({ children }) => {
   return (
     <div className='product-container row '>
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
-      <ProductBox />
+      {children}
     </div>
   );
 }

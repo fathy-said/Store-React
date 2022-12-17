@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Navbar } from '../components';
+import { Navbar, Footer } from '../components';
 import { Home } from "./"
 const AllPages = () => {
   return (
@@ -11,6 +11,8 @@ const AllPages = () => {
           <Route path='/' element={<Home />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
+
     </>
   );
 }
