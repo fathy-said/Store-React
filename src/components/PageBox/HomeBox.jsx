@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ProductBox } from "../index.js"
+import { ProductThunk } from '../../RTK/Thunk/ProductThunk.jsx';
+import { ContainerProduct, SliderBox, TitleBox } from ".."
+import { useDispatch, useSelector } from 'react-redux';
 
-import { ContainerProduct, SliderBox, TitleBox } from "../"
-const PageBox = () => {
+const HomeBox = () => {
+  let dispatch = useDispatch()
+  let { products } = useSelector((state) => state.ProductReducer)
+  console.log(products);
+  useEffect(() => {
+    dispatch(ProductThunk())
+  }, []);
   return (
     <>
       <div className="container">
         <SliderBox />
         <TitleBox text={`SEE OUR Smartphones`} />
         <ContainerProduct >
-          <ProductBox />
+
+          {
+            products.length ? products.map((pro) => {
+
+              return <ProductBox />
+
+
+            }) : null
+          }
         </ContainerProduct>
         {/* ================================================================ */}
         <TitleBox text={`SMARTPHONES`} />
@@ -41,4 +57,4 @@ const PageBox = () => {
   );
 }
 
-export default PageBox;
+export default HomeBox;

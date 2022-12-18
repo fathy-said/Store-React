@@ -1,10 +1,10 @@
 import React from 'react';
-import { TitleBox, SliderBox, ContainerProduct, PageBox } from '../components';
+import { TitleBox, SliderBox, ContainerProduct, HomeBox } from '../components';
 const Home = () => {
   return (
     <>
 
-      <PageBox />
+      <HomeBox />
     </>
   );
 }

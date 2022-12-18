@@ -5,7 +5,7 @@ import TitleBox from './TitleBox/TitleBox';
 import SliderBox from './SliderBox/SliderBox';
 import ContainerProduct from './ContainerProduct/ContainerProduct';
 import ProductBox from './ProductBox/ProductBox';
-import PageBox from './PageBox/PageBox';
+import HomeBox from './PageBox/HomeBox';
 import Footer from './Footer/Footer';
 
 export {
@@ -17,5 +17,5 @@ export {
   SliderBox,
   ContainerProduct,
   ProductBox,
-  PageBox,
+  HomeBox,
 };
