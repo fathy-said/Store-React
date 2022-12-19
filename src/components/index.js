@@ -7,6 +7,7 @@ import ContainerProduct from './ContainerProduct/ContainerProduct';
 import ProductBox from './ProductBox/ProductBox';
 import HomeBox from './PageBox/HomeBox';
 import Footer from './Footer/Footer';
+import LoadingBox from './LoadingBox/LoadingBox';
 
 export {
   SubHeading,
@@ -18,4 +19,5 @@ export {
   ContainerProduct,
   ProductBox,
   HomeBox,
+  LoadingBox,
 };

@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { ProductBox } from "../index.js"
+import { LoadingBox, ProductBox } from "../index.js"
 import { ProductThunk } from '../../RTK/Thunk/ProductThunk.jsx';
 import { ContainerProduct, SliderBox, TitleBox } from ".."
 import { useDispatch, useSelector } from 'react-redux';
 
 const HomeBox = () => {
   let dispatch = useDispatch()
-  let { products } = useSelector((state) => state.ProductReducer)
+  let { products, productLoading } = useSelector((state) => state.ProductReducer)
   let { searchData } = useSelector((state) => state.SearchReducer)
 
   let showData = useRef(true)
@@ -20,11 +20,12 @@ const HomeBox = () => {
   return (
     <>
 
-      {
-        searchData.length > 0 ? (
-          <>
-            <div className="container">
-              <SliderBox />
+      <div className="container">
+        <SliderBox />
+
+        {
+          searchData.length > 0 ? (
+            <>
               <TitleBox text={`Search data`} />
               <ContainerProduct >
 
@@ -41,11 +42,15 @@ const HomeBox = () => {
 
               </ContainerProduct>
 
-            </div>
-          </>) : (
-          <>
-            <div className="container">
-              <SliderBox />
+            </>) : (
+
+
+            productLoading == true ? (
+              <LoadingBox />
+            ) : (<>
+
+
+
               <TitleBox text={`SEE OUR PRODUCTS`} />
               <ContainerProduct >
 
@@ -130,15 +135,24 @@ const HomeBox = () => {
 
               {/* ================================================================ */}
 
-            </div>
-          </>)
+            </>)
 
-      }
+
+
+          )
+
+        }
+      </div>
+
 
 
 
     </>
+    // <>
 
+    //   <LoadingBox />
+
+    // </>
   )
 }
 
