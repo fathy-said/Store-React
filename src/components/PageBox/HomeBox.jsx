@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ProductBox } from "../index.js"
 import { ProductThunk } from '../../RTK/Thunk/ProductThunk.jsx';
 import { ContainerProduct, SliderBox, TitleBox } from ".."
@@ -7,54 +7,139 @@ import { useDispatch, useSelector } from 'react-redux';
 const HomeBox = () => {
   let dispatch = useDispatch()
   let { products } = useSelector((state) => state.ProductReducer)
-  console.log(products);
+  let { searchData } = useSelector((state) => state.SearchReducer)
+
+  let showData = useRef(true)
   useEffect(() => {
-    dispatch(ProductThunk())
+    if (showData.current === true) {
+      dispatch(ProductThunk())
+      showData.current = false
+
+    }
   }, []);
   return (
     <>
-      <div className="container">
-        <SliderBox />
-        <TitleBox text={`SEE OUR Smartphones`} />
-        <ContainerProduct >
 
-          {
-            products.length ? products.map((pro) => {
+      {
+        searchData.length > 0 ? (
+          <>
+            <div className="container">
+              <SliderBox />
+              <TitleBox text={`Search data`} />
+              <ContainerProduct >
 
-              return <ProductBox />
+                {
+                  searchData.length ? searchData.map((pro) => {
+
+                    return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
 
 
-            }) : null
-          }
-        </ContainerProduct>
-        {/* ================================================================ */}
-        <TitleBox text={`SMARTPHONES`} />
-        <ContainerProduct />        <ContainerProduct >
-          <ProductBox />
-        </ContainerProduct>
-        {/* ================================================================ */}
 
-        <TitleBox text={`LAPTOPS`} />
-        <ContainerProduct >
-          <ProductBox />
-        </ContainerProduct>
-        {/* ================================================================ */}
 
-        <TitleBox text={`FRAGRANCES`} />
-        <ContainerProduct >
-          <ProductBox />
-        </ContainerProduct>
-        {/* ================================================================ */}
+                  }) : null
+                }
 
-        <TitleBox text={`SKINCARE`} />
-        <ContainerProduct >
-          <ProductBox />
-        </ContainerProduct>
-        {/* ================================================================ */}
+              </ContainerProduct>
 
-      </div>
+            </div>
+          </>) : (
+          <>
+            <div className="container">
+              <SliderBox />
+              <TitleBox text={`SEE OUR PRODUCTS`} />
+              <ContainerProduct >
+
+                {
+                  products.length ? products.map((pro) => {
+
+                    return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+
+
+
+                  }) : null
+                }
+
+              </ContainerProduct>
+              {/* ================================================================ */}
+              <>
+                <TitleBox text={`SMART PHONES`} />
+                <ContainerProduct />
+                <ContainerProduct >
+                  {
+                    products.length ? products.map((pro) => {
+                      if (pro.category === "smartphones") {
+                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                      }
+
+
+                    }) : null
+                  }
+                </ContainerProduct>
+              </>
+
+              {/* ================================================================ */}
+              <>
+                <TitleBox text={`LAPTOPS`} />
+                <ContainerProduct >
+                  {
+                    products.length ? products.map((pro) => {
+                      if (pro.category === "laptops") {
+                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                      }
+                    }) : null
+                  }
+                </ContainerProduct>
+              </>
+
+              {/* ================================================================ */}
+              <>
+                <TitleBox text={`FRAGRANCES`} />
+                <ContainerProduct >
+                  {
+                    products.length ? products.map((pro) => {
+                      if (pro.category === "fragrances") {
+                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                      }
+                    }) : null
+                  }
+
+
+                </ContainerProduct>
+              </>
+
+              {/* ================================================================ */}
+              <>
+                <TitleBox text={`SKINCARE`} />
+                <ContainerProduct >
+                  {
+                    products.length ? products.map((pro) => {
+                      if (pro.category === "skincare") {
+                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                      }
+                    }) : null
+                  }          </ContainerProduct>
+              </>
+
+              {/* ================================================================ */}
+
+
+              {/* ================================================================ */}
+
+            </div>
+          </>)
+
+      }
+
+
+
     </>
-  );
+
+  )
 }
 
 export default HomeBox;

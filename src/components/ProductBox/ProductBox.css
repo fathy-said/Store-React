@@ -1,4 +1,7 @@
-.product-box {}
+.product-box {
+  width: 100%;
+  height: 100%;
+}
 
 .product-box .box {
   /* border: 1px solid red; */
@@ -8,7 +11,8 @@
   cursor: pointer;
   background-color: var(--back-color-3);
   transition: var(--transition);
-
+  width: 100%;
+  height: 100%;
 }
 
 .product-box .box:hover {

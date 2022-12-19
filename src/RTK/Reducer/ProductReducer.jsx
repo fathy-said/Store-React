@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import { ProductThunk } from "../Thunk/ProductThunk";
 let initState = {
   products: [],
-
 }
 let ProductReducer = createSlice({
   name: 'AllProduct',
   initialState: initState,
   reducers: {
+
+
+
   },
   extraReducers: (builder) => {
     builder
@@ -30,3 +32,4 @@ let ProductReducer = createSlice({
 })
 
 export default ProductReducer.reducer
+

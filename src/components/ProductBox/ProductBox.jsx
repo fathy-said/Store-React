@@ -1,23 +1,23 @@
 import React from 'react';
 import "./ProductBox.css"
 import img1 from "../../assets/pexels-helena-lopes-933964.jpg"
-const ProductBox = () => {
+const ProductBox = ({ img, name, id, brand }) => {
   return (
     <>
-      <div className="product-box col col-md-4 col-xl-3">
+      <div className="product-box ">
         <div className="box">
           <span className='title'>go home</span>
 
           <div className="box-img">
-            <img src={img1} alt="" />
+            <img src={img} alt="" />
           </div>
           <div className="info">
             <h5>
-              Lorem ipsum: <span>ipsum</span>
+              brand: <span>{brand}</span>
             </h5>
             <hr />
             <h5>
-              Lorem ipsum
+              {name}
             </h5>
 
             <div className="box-span">

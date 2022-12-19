@@ -3,7 +3,7 @@ import "./ContainerProduct.css"
 import { ProductBox } from "../index.js"
 const ContainerProduct = ({ children }) => {
   return (
-    <div className='product-container row '>
+    <div className='product-container  '>
       {children}
     </div>
   );

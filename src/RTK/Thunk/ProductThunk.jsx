@@ -6,7 +6,7 @@ export let ProductThunk = createAsyncThunk('AllProduct/ProductThunk', async (arg
   try {
     let res = await axios.get(`https://dummyjson.com/products/`);
     // console.log(res)
-    // return (res)
+    return (res)
   }
   catch (e) {
     return rejectWithValue(e.message);
