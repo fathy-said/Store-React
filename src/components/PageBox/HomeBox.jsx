@@ -32,7 +32,7 @@ const HomeBox = () => {
                 {
                   searchData.length ? searchData.map((pro) => {
 
-                    return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+                    return <ProductBox img={pro.thumbnail} id={pro.id} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} key={pro.id} name={pro.title} brand={pro.brand} />
 
 
 
@@ -43,99 +43,94 @@ const HomeBox = () => {
               </ContainerProduct>
 
             </>) : (
-
-
             productLoading == true ? (
               <LoadingBox />
-            ) : (<>
-
-
-
-              <TitleBox text={`SEE OUR PRODUCTS`} />
-              <ContainerProduct >
-
-                {
-                  products.length ? products.map((pro) => {
-
-                    return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
-
-
-
-                  }) : null
-                }
-
-              </ContainerProduct>
-              {/* ================================================================ */}
+            ) : (
               <>
-                <TitleBox text={`SMART PHONES`} />
-                <ContainerProduct />
+                <TitleBox text={`SEE OUR PRODUCTS`} />
                 <ContainerProduct >
+
                   {
                     products.length ? products.map((pro) => {
-                      if (pro.category === "smartphones") {
-                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
 
-                      }
+                      return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+
 
 
                     }) : null
                   }
-                </ContainerProduct>
-              </>
-
-              {/* ================================================================ */}
-              <>
-                <TitleBox text={`LAPTOPS`} />
-                <ContainerProduct >
-                  {
-                    products.length ? products.map((pro) => {
-                      if (pro.category === "laptops") {
-                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
-                      }
-                    }) : null
-                  }
-                </ContainerProduct>
-              </>
-
-              {/* ================================================================ */}
-              <>
-                <TitleBox text={`FRAGRANCES`} />
-                <ContainerProduct >
-                  {
-                    products.length ? products.map((pro) => {
-                      if (pro.category === "fragrances") {
-                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
-                      }
-                    }) : null
-                  }
-
 
                 </ContainerProduct>
-              </>
+                {/* ================================================================ */}
+                <>
+                  <TitleBox text={`SMART PHONES`} />
+                  <ContainerProduct />
+                  <ContainerProduct >
+                    {
+                      products.length ? products.map((pro) => {
+                        if (pro.category === "smartphones") {
+                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
 
-              {/* ================================================================ */}
-              <>
-                <TitleBox text={`SKINCARE`} />
-                <ContainerProduct >
-                  {
-                    products.length ? products.map((pro) => {
-                      if (pro.category === "skincare") {
-                        return <ProductBox img={pro.thumbnail} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
-                      }
-                    }) : null
-                  }          </ContainerProduct>
-              </>
-
-              {/* ================================================================ */}
+                        }
 
 
-              {/* ================================================================ */}
+                      }) : null
+                    }
+                  </ContainerProduct>
+                </>
 
-            </>)
+                {/* ================================================================ */}
+                <>
+                  <TitleBox text={`LAPTOPS`} />
+                  <ContainerProduct >
+                    {
+                      products.length ? products.map((pro) => {
+                        if (pro.category === "laptops") {
+                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                        }
+                      }) : null
+                    }
+                  </ContainerProduct>
+                </>
+
+                {/* ================================================================ */}
+                <>
+                  <TitleBox text={`FRAGRANCES`} />
+                  <ContainerProduct >
+                    {
+                      products.length ? products.map((pro) => {
+                        if (pro.category === "fragrances") {
+                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                        }
+                      }) : null
+                    }
+
+
+                  </ContainerProduct>
+                </>
+
+                {/* ================================================================ */}
+                <>
+                  <TitleBox text={`SKINCARE`} />
+                  <ContainerProduct >
+                    {
+                      products.length ? products.map((pro) => {
+                        if (pro.category === "skincare") {
+                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+
+                        }
+                      }) : null
+                    }          </ContainerProduct>
+                </>
+
+                {/* ================================================================ */}
+
+
+
+              </>)
 
 
 

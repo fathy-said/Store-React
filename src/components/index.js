@@ -6,6 +6,7 @@ import SliderBox from './SliderBox/SliderBox';
 import ContainerProduct from './ContainerProduct/ContainerProduct';
 import ProductBox from './ProductBox/ProductBox';
 import HomeBox from './PageBox/HomeBox';
+import CategoryBox from './PageBox/CategoryBox';
 import Footer from './Footer/Footer';
 import LoadingBox from './LoadingBox/LoadingBox';
 
@@ -20,4 +21,5 @@ export {
   ProductBox,
   HomeBox,
   LoadingBox,
+  CategoryBox,
 };

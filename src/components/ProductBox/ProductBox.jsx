@@ -1,12 +1,14 @@
 import React from 'react';
 import "./ProductBox.css"
 import img1 from "../../assets/pexels-helena-lopes-933964.jpg"
-const ProductBox = ({ img, name, id, brand }) => {
+const ProductBox = ({ img, name, id, brand, category, price, discountPercentage }) => {
   return (
     <>
       <div className="product-box ">
         <div className="box">
-          <span className='title'>go home</span>
+          <span className='title'>
+            {category}
+          </span>
 
           <div className="box-img">
             <img src={img} alt="" />
@@ -21,9 +23,11 @@ const ProductBox = ({ img, name, id, brand }) => {
             </h5>
 
             <div className="box-span">
-              <span>$22</span>
-              <span>$124</span>
-              <span>(%off)</span>
+              <span>
+                $ {price}
+              </span>
+              <span>${discountPercentage}</span>
+              <span>(%{Math.trunc(discountPercentage)})</span>
             </div>
           </div>
         </div>
