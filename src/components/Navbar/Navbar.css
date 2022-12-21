@@ -261,6 +261,95 @@
   font-weight: 400;
 }
 
+.navbar-box .menu-box {
+  background-color: var(--back-color-1);
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+  top: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 1001;
+  padding: 20px;
+  transition: var(--transition);
+  left: -300px;
+  opacity: 0;
+}
+
+.navbar-box .menu-box.active {
+  opacity: 1;
+  left: 0;
+}
+
+.navbar-box .menu-box .box {
+  margin-top: 20px;
+
+}
+
+.navbar-box .menu-box .box .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+}
+
+.navbar-box .menu-box .box .title h5 {
+
+  margin: 0;
+  font-size: var(--fnt-17px);
+  color: var(--font-color-5);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.navbar-box .menu-box .box .title span {
+  font-size: var(--fnt-30px);
+  color: var(--font-color-5);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.navbar-box .menu-box .box .title span svg {}
+
+.navbar-box .menu-box .box ul {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: start;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  overflow-y: auto;
+  height: 90vh;
+  padding-bottom: 100px;
+
+}
+
+.navbar-box .menu-box .box ul a {
+  width: 100%;
+
+}
+
+.navbar-box .menu-box .box ul li {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--font-color-4);
+  color: var(--font-color-2);
+  font-size: var(--fnt-16px);
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.navbar-box .menu-box .box ul li:hover {
+  color: var(--main-color-2);
+  padding-left: 10px;
+
+}
+
+
 
 
 

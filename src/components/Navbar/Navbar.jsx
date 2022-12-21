@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { searchProduct } from "../../RTK/Thunk/SearchProduct";
 import "./Navbar.css";
 import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
@@ -8,10 +8,14 @@ import { TbMenu2 } from "react-icons/tb";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { chickSearch } from "../../RTK/Reducer/SearchReducer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { GrFormClose } from "react-icons/gr";
 
 const Navbar = () => {
+
+  let [menuActive, setMenuActive] = useState('');
   let dispatch = useDispatch();
+  let navget = useNavigate('')
   return (
     <div>
       <>
@@ -52,7 +56,9 @@ const Navbar = () => {
             </div>
             <div className="nav-bottom">
               <div className="box-left">
-                <span className="menu">
+                <span className="menu" onClick={(e) => {
+                  setMenuActive(true)
+                }} >
                   <TbMenu2 />
                 </span>
 
@@ -82,6 +88,8 @@ const Navbar = () => {
                         dispatch(
                           chickSearch({ type: true })
                         );
+
+                        navget('/')
                       } else {
                         dispatch(
                           chickSearch({ type: false })
@@ -165,6 +173,75 @@ const Navbar = () => {
                   <HiOutlineSearch />
                 </button>
               </form>
+            </div>
+          </div>
+
+          <div className={menuActive == true ? "menu-box active" : 'menu-box'}>
+            <div className="box">
+              <div className="title">
+                <h5>
+                  ALL CATEGORIES
+                </h5>
+                <span onClick={(e) => {
+                  setMenuActive(false)
+                }}>
+                  <GrFormClose />
+                </span>
+              </div>
+              <ul>
+                <Link to={'/category/smartphones'}> <li>Smartphones</li></Link>
+
+                <Link to={'/category/laptops'}><li>Laptops</li></Link>
+
+
+                <Link to={'/category/fragrances'}><li>Fragrances</li></Link>
+
+
+                <Link to={'/category/skincare'}> <li>Skincare</li></Link>
+
+
+                <Link to={'/category/groceries'}>    <li>Groceries</li></Link>
+
+
+                <Link to={'/category/home-decoration'}> <li>Home Decoration</li></Link>
+
+
+                <Link to={'/category/furniture'}><li>Furniture</li></Link>
+                <Link to={'/category/tops'}><li>tops</li></Link>
+
+
+                <Link to={'/category/womens-dresses'}> <li>Womens Dresses</li></Link>
+
+
+                <Link to={'/category/womens-shoes'}> <li>Womens Shoes</li></Link>
+
+
+                <Link to={'/category/mens-shirts'}><li>Mens Shirts</li></Link>
+
+
+                <Link to={'/category/mens-shoes'}><li>Mens Shoes</li></Link>
+
+
+                <Link to={'/category/mens-watches'}> <li>Mens Watches</li></Link>
+
+
+                <Link to={'/category/omens-bags'}><li>Womens Bags</li></Link>
+
+
+                <Link to={'/category/womens-jewellery'}><li>Womens Jewellery</li></Link>
+
+
+                <Link to={'/category/sunglasses'}>  <li>Sunglasses</li></Link>
+
+
+                <Link to={'/category/automotive'}><li>Automotive</li></Link>
+
+
+                <Link to={'/category/motorcycle'}> <li>Motorcycle</li></Link>
+
+
+                <Link to={'/category/lighting'}> <li>Lighting</li></Link>
+              </ul>
             </div>
           </div>
         </div>
