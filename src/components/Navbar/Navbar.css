@@ -326,6 +326,11 @@
 
 }
 
+.navbar-box .menu-box .box ul::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
 .navbar-box .menu-box .box ul a {
   width: 100%;
 
@@ -334,7 +339,7 @@
 .navbar-box .menu-box .box ul li {
   width: 100%;
   padding: 10px 0;
-  border-bottom: 1px solid var(--font-color-4);
+  border-bottom: 1px solid var(--border-color-1);
   color: var(--font-color-2);
   font-size: var(--fnt-16px);
   text-transform: capitalize;

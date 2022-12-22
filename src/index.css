@@ -28,6 +28,7 @@
   --fnt-17px: 17px;
   --fnt-16px: 16px;
   --fnt-15px: 15px;
+  --fnt-14px: 14px;
   --fnt-13px: 13px;
   --fnt-12px: 12px;
 }
@@ -74,6 +75,7 @@ ul {
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
