@@ -33,8 +33,11 @@ const HomeBox = () => {
                 {
                   searchData.length ? searchData.map((pro) => {
 
-                    return <ProductBox img={pro.thumbnail} id={pro.id} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} key={pro.id} name={pro.title} brand={pro.brand} />
-
+                    return (
+                      <Link to={'/detail/' + pro.id} key={pro.id}  >
+                        <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                      </Link>
+                    )
 
 
 

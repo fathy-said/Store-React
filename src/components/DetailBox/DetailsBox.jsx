@@ -4,6 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsThunk } from '../../RTK/Thunk/DetailsThunk';
+import { CartAction } from "../../RTK/Reducer/CartReducer"
 const DetailsBox = () => {
   let dispatch = useDispatch()
   let { detailsData } = useSelector((state) => state.DetailsReducer)
@@ -94,7 +95,10 @@ const DetailsBox = () => {
                     </div>
                   </div>
                   <div className="button-box">
-                    <button><AiOutlineShoppingCart /> add to cart</button>
+                    <button onClick={(e) => {
+                      dispatch(CartAction(detailsData))
+
+                    }}><AiOutlineShoppingCart /> add to cart</button>
                     <button>buy now</button>
                   </div>
 

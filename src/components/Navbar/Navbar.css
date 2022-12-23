@@ -203,6 +203,7 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
+  color: var(--font-color-1);
 }
 
 

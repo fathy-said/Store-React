@@ -1,0 +1,147 @@
+.cart-box {
+  margin-top: 50px;
+}
+
+.cart-box .container {
+  overflow-x: auto;
+}
+
+.cart-box .container .table {
+  min-width: 1296px;
+
+}
+
+.cart-box .container .table thead {}
+
+.cart-box .container .table thead tr {
+  background-color: var(--back-color-3);
+}
+
+.cart-box .container .table thead tr th {
+  width: 190px;
+
+  color: var(--font-color-2);
+  font-size: var(--fnt-16px);
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.cart-box .container .table thead tr th:nth-child(1) {
+  width: 30px;
+
+}
+
+.cart-box .container .table thead tr th:nth-child(2) {
+
+  width: 320px;
+
+}
+
+.cart-box .container .table thead tr th div {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.cart-box .container .table tbody {
+
+  background-color: var(--back-color-3);
+}
+
+.cart-box .container .table tbody tr {}
+
+.cart-box .container .table tbody tr td div {}
+
+.cart-box .container .table tbody tr td div img {
+  width: 100px;
+  border-radius: 4px;
+}
+
+.cart-box .container .table tbody tr td div p {
+  font-size: var(--fnt-14px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--font-color-2);
+  text-transform: capitalize;
+}
+
+.cart-box .container .table tbody tr td:nth-child(4) {
+  text-transform: capitalize;
+  color: var(--font-color-3);
+  font-weight: 500;
+  font-size: var(--fnt-17px);
+
+
+}
+
+.cart-box .container .table .empty {
+  height: 30px;
+  width: 100%;
+}
+
+.cart-box .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+}
+
+
+
+.cart-box .quantity div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border: 1px solid var(--border-color-1);
+}
+
+.cart-box .quantity div button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-size: var(--fnt-22px);
+  font-weight: 500;
+  border: none;
+  border: 1px solid transparent;
+
+}
+
+
+.cart-box .quantity div span {
+  padding: 5px 10px;
+  font-size: var(--fnt-16px);
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-left-color: var(--border-color-1);
+  border-right-color: var(--border-color-1);
+}
+
+.cart-box .container .table tbody tr td:nth-child(6) {
+  text-transform: capitalize;
+  color: var(--main-color-2);
+  font-weight: 500;
+  font-size: var(--fnt-17px);
+
+
+}
+
+.cart-box .container .table tbody tr td:nth-child(7) button {
+  all: unset;
+  cursor: pointer;
+  color: var(--font-color-2);
+  font-size: var(--fnt-17px);
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: var(--transition);
+
+}
+
+.cart-box .container .table tbody tr td:nth-child(7) button:hover {
+  color: var(--main-color-2);
+
+
+}

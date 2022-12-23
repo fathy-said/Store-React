@@ -12,6 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";
 
 const Navbar = () => {
+  let { cart } = useSelector((state) => state.CartReducer)
+
   let [menuActive, setMenuActive] = useState('');
   let dispatch = useDispatch();
   let navget = useNavigate('')
@@ -130,8 +132,14 @@ const Navbar = () => {
 
             <div className="box-right">
               <div className="shop">
-                <span>2</span>
-                <FaShoppingBag />
+                <Link to="/cart">
+                  <span>
+                    {cart.length}
+                  </span>
+
+
+                  <FaShoppingBag />
+                </Link>
               </div>
             </div>
           </div>

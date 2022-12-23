@@ -8,6 +8,7 @@ import ProductBox from './ProductBox/ProductBox';
 import HomeBox from './PageBox/HomeBox';
 import CategoryBox from './PageBox/CategoryBox';
 import DetailsBox from './DetailBox/DetailsBox';
+import CartBox from './CartBox/CartBox';
 import Footer from './Footer/Footer';
 import LoadingBox from './LoadingBox/LoadingBox';
 
@@ -24,4 +25,5 @@ export {
   LoadingBox,
   CategoryBox,
   DetailsBox,
+  CartBox,
 };
