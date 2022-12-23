@@ -158,6 +158,8 @@ const Navbar = () => {
                         title: e.target.value,
                       })
                     );
+                    navget('/')
+
                     // dispatch(searchProduct({ title: 'iphone' }))
                   } else {
                     console.log("said");
