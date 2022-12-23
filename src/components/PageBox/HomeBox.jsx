@@ -3,6 +3,7 @@ import { LoadingBox, ProductBox } from "../index.js"
 import { ProductThunk } from '../../RTK/Thunk/ProductThunk.jsx';
 import { ContainerProduct, SliderBox, TitleBox } from ".."
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const HomeBox = () => {
   let dispatch = useDispatch()
@@ -53,8 +54,11 @@ const HomeBox = () => {
                   {
                     products.length ? products.map((pro) => {
 
-                      return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
+                      return (
+                        <Link to={'/detail/' + pro.id} key={pro.id}  >
+                          <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                        </Link>
+                      )
 
 
 
@@ -70,7 +74,11 @@ const HomeBox = () => {
                     {
                       products.length ? products.map((pro) => {
                         if (pro.category === "smartphones") {
-                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
+                          return (
+                            <Link to={'/detail/' + pro.id} key={pro.id}  >
+                              <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                            </Link>
+                          )
 
                         }
 
@@ -87,8 +95,11 @@ const HomeBox = () => {
                     {
                       products.length ? products.map((pro) => {
                         if (pro.category === "laptops") {
-                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
+                          return (
+                            <Link to={'/detail/' + pro.id} key={pro.id}  >
+                              <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                            </Link>
+                          )
                         }
                       }) : null
                     }
@@ -102,8 +113,11 @@ const HomeBox = () => {
                     {
                       products.length ? products.map((pro) => {
                         if (pro.category === "fragrances") {
-                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
+                          return (
+                            <Link to={'/detail/' + pro.id} key={pro.id}  >
+                              <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                            </Link>
+                          )
                         }
                       }) : null
                     }
@@ -119,17 +133,17 @@ const HomeBox = () => {
                     {
                       products.length ? products.map((pro) => {
                         if (pro.category === "skincare") {
-                          return <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} key={pro.id} name={pro.title} brand={pro.brand} />
-
+                          return (
+                            <Link to={'/detail/' + pro.id} key={pro.id}  >
+                              <ProductBox img={pro.thumbnail} price={pro.price} discountPercentage={pro.discountPercentage} category={pro.category} id={pro.id} name={pro.title} brand={pro.brand} />
+                            </Link>
+                          )
                         }
                       }) : null
                     }          </ContainerProduct>
                 </>
 
                 {/* ================================================================ */}
-
-
-
               </>)
 
 
