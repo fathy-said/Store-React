@@ -300,3 +300,48 @@
 
 
 }
+
+.detail-box .add-cart {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -5;
+  display: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.detail-box .add-cart.active {
+  z-index: 1010;
+  display: flex;
+  opacity: 1;
+}
+
+.detail-box .add-cart .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.574);
+  height: 200px;
+  width: 100%;
+  max-width: 100%;
+
+}
+
+.detail-box .add-cart .box img {
+  width: 80px;
+}
+
+.detail-box .add-cart .box h6 {
+  font-size: var(--fnt-22px);
+  text-transform: capitalize;
+  color: var(--font-color-1);
+}

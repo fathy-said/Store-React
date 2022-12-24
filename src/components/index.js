@@ -10,6 +10,7 @@ import CategoryBox from './PageBox/CategoryBox';
 import DetailsBox from './DetailBox/DetailsBox';
 import CartBox from './CartBox/CartBox';
 import Footer from './Footer/Footer';
+import CartEmpty from './CartEmpty/CartEmpty';
 import LoadingBox from './LoadingBox/LoadingBox';
 
 export {
@@ -26,4 +27,5 @@ export {
   CategoryBox,
   DetailsBox,
   CartBox,
+  CartEmpty,
 };

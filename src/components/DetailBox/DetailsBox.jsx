@@ -4,7 +4,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsThunk } from '../../RTK/Thunk/DetailsThunk';
-import { CartAction } from "../../RTK/Reducer/CartReducer"
+import { CartAction, ChangeProductCount } from "../../RTK/Reducer/CartReducer"
+import Img from "../../assets/correct.png"
+
 const DetailsBox = () => {
   let dispatch = useDispatch()
   let { detailsData } = useSelector((state) => state.DetailsReducer)
@@ -88,15 +90,24 @@ const DetailsBox = () => {
                         if (res > 0) {
                           setCount(res)
                         }
+
                       }}>-</button> <span>{count}</span><button onClick={(e) => {
                         let res = count + 1
                         setCount(res)
+
                       }}>+</button>
                     </div>
                   </div>
                   <div className="button-box">
                     <button onClick={(e) => {
                       dispatch(CartAction(detailsData))
+                      dispatch(ChangeProductCount({ type: 'count', id: detailsData.id, quantity: count }))
+                      document.querySelector('.detail-box .add-cart').classList.add("active")
+                      setTimeout((el) => {
+                        document.querySelector('.detail-box .add-cart').classList.remove("active")
+                      }, [1000])
+
+
 
                     }}><AiOutlineShoppingCart /> add to cart</button>
                     <button>buy now</button>
@@ -104,7 +115,12 @@ const DetailsBox = () => {
 
                 </div>
               </div>
-
+              <div className="add-cart ">
+                <div className="box">
+                  <img src={Img} alt="" />
+                  <h6>added to cart.</h6>
+                </div>
+              </div>
             </div>
           </>
         ) : (null)
