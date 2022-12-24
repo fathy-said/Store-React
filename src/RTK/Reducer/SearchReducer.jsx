@@ -21,7 +21,7 @@ let searchReducer = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(searchProduct.pending, (state, action) => {
-        console.log('loading')
+        // console.log('loading')
       })
       .addCase(searchProduct.fulfilled, (state, action) => {
         // console.log(action.payload.data.products)

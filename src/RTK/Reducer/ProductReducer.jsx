@@ -16,7 +16,7 @@ let ProductReducer = createSlice({
     builder
       .addCase(ProductThunk.pending, (state, action) => {
 
-        console.log("loading");
+        // console.log("loading");
         state.productLoading = true;
 
       })

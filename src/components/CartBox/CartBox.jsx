@@ -9,7 +9,6 @@ const CartBox = () => {
   // const [count, setCount] = useState(1);
   let { cart } = useSelector((state) => state.CartReducer)
   let dispatch = useDispatch()
-  console.log(cart)
   let totalPrice = cart.reduce((acc, product) => {
 
     acc = Number(acc) + (product.price * product.productCount);
